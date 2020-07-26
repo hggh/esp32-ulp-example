@@ -31,6 +31,7 @@ These three variables are used to detect the pin change.
 TODO:
  * check power usage of the chip, because ULP FSM runs every 20ms?
  * if a pin change is happend within 20ms (from HIGH to LOW and back to HIGH) it will not detected?
+ * use macros inside ULP?
 
 
 example output:
