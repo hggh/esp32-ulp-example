@@ -85,7 +85,7 @@ p3_status_changed:
 entry:
 	STAGE_RST
 
-	/* read the RTC pins and store it into global variables */
+	/* read the RTC pins and store it into global variables ; just read the pin register once and store it into R1 */
 	READ_RTC_REG(RTC_GPIO_IN_REG, RTC_GPIO_IN_NEXT_S, 16)
 	move r1, r0
 
