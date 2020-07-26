@@ -9,6 +9,8 @@ GPIOs uses:
  
 All GPIOs needs a external pullup resistor!
 
+The ULP program runs in background and will not be stopped if we wakeup the SoC (main.c). The ULP program exists with (halt) and will be started every [20ms](https://github.com/hggh/esp32-ulp-example/blob/master/src/main.c#L57).
+
 The ULP program has four global variables that will be shared with the SoC program:
 
  * p1_status
@@ -25,3 +27,7 @@ The ULP program has also three private variables:
  * p3_status_next
  
 These three variables are used to detect the pin change.
+
+TODO:
+ * check power usage of the chip, because ULP FSM runs every 20ms?
+ * if a pin change is happend within 20ms (from HIGH to LOW and back to HIGH) it will not detected?
