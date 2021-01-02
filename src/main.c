@@ -9,8 +9,6 @@
 #include "nvs_flash.h"
 #include "driver/gpio.h"
 #include "driver/rtc_io.h"
-#include "esp_bt.h"
-#include "esp_bt_main.h"
 #include "esp32/ulp.h"
 #include "ulp_main.h"
 
@@ -66,9 +64,6 @@ void app_main() {
     ret = nvs_flash_init();
   }
   ESP_ERROR_CHECK(ret);
-  // disable bluetooth
-  esp_bluedroid_disable();
-  esp_bt_controller_disable();
 
   // suppress boot message
   esp_deep_sleep_disable_rom_logging();
